@@ -1,5 +1,6 @@
 import "./style.css";
 import { loadPage } from "./init_page.js";
 
-loadPage();
+loadPage()
 console.log("I am running");
+

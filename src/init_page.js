@@ -1,24 +1,56 @@
-function createElement(tags, elClass, content) {
-  const element = document.createElement(tags);
-  if (elClass !== undefined) {
-    element.classList = elClass;
+function createElement(el, elContent, elClass) {
+  const element = document.createElement(el);
+  if (elContent) {
+    element.textContent = elContent;
   }
-  if (content !== undefined) {
-    element.textContent = content;
+  if (elClass) {
+    element.classList = elClass;
   }
 
   return element;
 }
 
-const divContent = document.querySelector("#content");
+function createList(listType, listContent = [], listClass) {
+  const list = createElement(listType);
+  listContent.forEach((content) => list.append(createElement("li", content)));
+  if (listClass) {
+    list.classList = listClass;
+  }
 
-const headLine = createElement("h1", "head-line", "My Awesome Restaurant");
-const para = createElement(
-  "p",
-  "description",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  return list;
+}
+
+const fragment = new DocumentFragment();
+
+const headingDiv = createElement("div", "", "heading-div");
+headingDiv.append(createElement("h1", "My Awesome Restaurant"));
+
+const contentDiv = createElement("div", "", "content-div");
+contentDiv.append(
+  createElement(
+    "p",
+    "Our Restaurant is the best restaurant you can get. We serve many type of food",
+    "restaurant-description",
+  ),
 );
 
+contentDiv.append(
+  createList(
+    "ul",
+    [
+      "Monday: 08.00 - 16.00",
+      "Tuesday: 08.00 - 16.00",
+      "Wednesday: 09.00 - 17.00",
+      "Thursday: 10.00 - 18.00",
+      "Friday: 12.00 - 20.00",
+    ],
+    "open-hour",
+  ),
+);
+
+fragment.append(headingDiv, contentDiv);
+
 export function loadPage() {
-  divContent.append(headLine, para);
+  const pageContent = document.querySelector("#content");
+  pageContent.append(fragment);
 }
