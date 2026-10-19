@@ -1,7 +1,5 @@
 import { createElement } from "../util.js";
 
-const fragment = new DocumentFragment();
-
 const menuItem = [
   {
     title: "Nasi goreng",
@@ -33,7 +31,7 @@ export function createMenuItem() {
   const pageContent = document.querySelector("#content");
   pageContent.textContent = "";
 
-  const itemFragement = new DocumentFragment();
+  const fragment = new DocumentFragment();
 
   menuItem.forEach((item) => {
     const itemDiv = createElement("div", "", "item-div");
@@ -45,11 +43,8 @@ export function createMenuItem() {
       itemImage,
     );
 
-    itemFragement.append(itemDiv);
+    fragment.append(itemDiv);
   });
 
-  fragment.append(itemFragement);
   pageContent.append(fragment);
 }
-
-

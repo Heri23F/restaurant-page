@@ -1,4 +1,4 @@
-import { createElement, createList } from "util.js";
+import { createElement, createList } from "../util.js";
 
 export function createHomeItem() {
   const pageContent = document.querySelector("#content");
