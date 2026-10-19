@@ -1,4 +1,4 @@
-import { createElement } from "./init_page.js";
+import { createElement } from "../util.js";
 
 const fragment = new DocumentFragment();
 
@@ -29,7 +29,7 @@ const menuItem = [
   },
 ];
 
-function createMenuItem() {
+export function createMenuItem() {
   const pageContent = document.querySelector("#content");
   pageContent.textContent = "";
 
@@ -52,6 +52,4 @@ function createMenuItem() {
   pageContent.append(fragment);
 }
 
-export function loadMenu() {
-  createMenuItem();
-}
+

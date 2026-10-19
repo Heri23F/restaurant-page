@@ -1,29 +1,9 @@
-function createElement(el, elContent, elClass) {
-  const element = document.createElement(el);
-  if (elContent) {
-    element.textContent = elContent;
-  }
-  if (elClass) {
-    element.classList = elClass;
-  }
+import { createElement, createList } from "util.js";
 
-  return element;
-}
-
-function createList(listType, listContent = [], listClass) {
-  const list = createElement(listType);
-  listContent.forEach((content) => list.append(createElement("li", content)));
-  if (listClass) {
-    list.classList = listClass;
-  }
-
-  return list;
-}
-
-function createHomeItem() {
+export function createHomeItem() {
   const pageContent = document.querySelector("#content");
   pageContent.textContent = "";
-  
+
   const fragment = new DocumentFragment();
   const leftDiv = createElement("div", "", "left-div");
   leftDiv.append(
@@ -61,9 +41,3 @@ function createHomeItem() {
   fragment.append(leftDiv, rightDiv);
   pageContent.append(fragment);
 }
-
-export function loadPage() {
-  createHomeItem();
-}
-
-export { createElement, createList };
