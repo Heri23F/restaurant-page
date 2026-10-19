@@ -33,6 +33,12 @@ export function createMenuItem() {
 
   const fragment = new DocumentFragment();
 
+  const menuHeading = createElement(
+    "h1",
+    "Awesome Restaurant Menu",
+    "menu-heading",
+  );
+
   menuItem.forEach((item) => {
     const itemDiv = createElement("div", "", "item-div");
     const itemImage = createElement("img", "", "item-image");
@@ -46,5 +52,5 @@ export function createMenuItem() {
     fragment.append(itemDiv);
   });
 
-  pageContent.append(fragment);
+  pageContent.append(menuHeading, fragment);
 }
