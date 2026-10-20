@@ -7,13 +7,11 @@ const navButtons = document.querySelector(".nav-buttons");
 
 navButtons.addEventListener("click", (event) => {
   const target = event.target;
+  const buttonMap = {
+    "home-button": "home",
+    "menu-button": "menu",
+    "about-button": "about",
+  };
 
-  if (target.id === "home-button") {
-    loadPage("home");
-    return;
-  }
-  if (target.id === "menu-button") {
-    loadPage("menu");
-    return;
-  }
+  loadPage(buttonMap[target.id]);
 });

@@ -1,8 +1,7 @@
 import { createElement, createList } from "../util.js";
 
 export function createHomeItem() {
-  const pageContent = document.querySelector("#content");
-  pageContent.textContent = "";
+  
 
   const fragment = new DocumentFragment();
   const leftDiv = createElement("div", "", "left-div");
@@ -39,5 +38,5 @@ export function createHomeItem() {
   );
 
   fragment.append(leftDiv, rightDiv);
-  pageContent.append(fragment);
+  return fragment
 }

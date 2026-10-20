@@ -1,6 +1,6 @@
 import { createElement } from "../util.js";
 
-const menuItem = [
+const menuItemArr = [
   {
     title: "Nasi goreng",
     description:
@@ -28,29 +28,27 @@ const menuItem = [
 ];
 
 export function createMenuItem() {
-  const pageContent = document.querySelector("#content");
-  pageContent.textContent = "";
-
   const fragment = new DocumentFragment();
-
+  const menuItem = new DocumentFragment();
   const menuHeading = createElement(
     "h1",
     "Awesome Restaurant Menu",
     "menu-heading",
   );
 
-  menuItem.forEach((item) => {
+  menuItemArr.forEach((item) => {
     const itemDiv = createElement("div", "", "item-div");
     const itemImage = createElement("img", "", "item-image");
     itemImage.setAttribute("src", item.image);
     itemDiv.append(
+      itemImage,
       createElement("h2", item.title, "item-title"),
       createElement("p", item.description, "item-description"),
-      itemImage,
     );
 
-    fragment.append(itemDiv);
+    menuItem.append(itemDiv);
   });
 
-  pageContent.append(menuHeading, fragment);
+  fragment.append(menuHeading, menuItem);
+  return fragment;
 }
