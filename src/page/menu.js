@@ -4,28 +4,29 @@ const menuItemArr = [
   {
     title: "Nasi goreng",
     description:
-      "Indonesian-style fried rice wok-tossed with sweet soy sauce, garlic, and shallots, topped with a fried egg and crackers.",
+      "A beloved national staple, this Indonesian-style fried rice is wok-tossed over high heat with an aromatic base of crushed garlic, shallots, and fiery chili. It is deeply caramelized with sweet savory kecap manis, giving it a signature rich glaze. Each serving comes complete with a perfectly fried sunny-side-up egg cascading over the rice, accompanied by crispy krupuk crackers and refreshing pickled cucumber slices.",
     image: "path/to/image",
   },
   {
     title: "Sate",
     description:
-      "Skewers of marinated meat grilled over charcoal, served with peanut sauce, sliced shallots, and rice cakes.",
+      "These iconic street-food skewers feature tender cubes of seasoned meat meticulously marinated in a blend of lemongrass, coriander, and local spices. Grilled over glowing traditional charcoal to achieve a perfect smoky char, they are generously smothered in a rich, velvety peanut sauce. The dish is beautifully balanced by sharp garnishes of sliced raw shallots, birds-eye chilis, and soft, dense lontong rice cakes.",
     image: "path/to/image",
   },
   {
     title: "Rendang",
     description:
-      "Beef slow-cooked in coconut milk and a rich blend of spices until tender and deeply savory.",
+      "Hailing from the West Sumatra highlands, this legendary culinary masterpiece consists of premium beef slow-braised for hours in a rich bath of thick coconut milk. Cooked alongside a potent paste of ginger, galangal, turmeric leaves, and lemongrass, the liquid gradually reduces until the spices caramelize into a deep, dark glaze. The result is exceptionally tender, melt-in-your-mouth beef infused with an intensely complex savory flavor.",
     image: "path/to/image",
   },
   {
     title: "Soto",
     description:
-      "Fragrant turmeric-spiced broth with shredded chicken, vermicelli, boiled egg, and fresh herbs.",
+      "A deeply comforting Indonesian soup, this dish features a vibrant, golden-hued broth seasoned with freshly ground turmeric, lemongrass, and kaffir lime leaves. Swimming inside the hot, fragrant soup are generous handfuls of shredded succulent chicken, translucent glass vermicelli noodles, and a soft-boiled egg. It is finished off with a squeeze of fresh lime juice, crispy fried shallots, and a side of spicy sambal paste for a bright, invigorating kick.",
     image: "path/to/image",
   },
 ];
+
 
 export function createMenuItem() {
   const fragment = new DocumentFragment();
