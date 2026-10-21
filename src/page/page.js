@@ -1,6 +1,7 @@
 import { createMenuItem } from "./menu.js";
 import { createHomeItem } from "./home.js";
 import { createAboutItem } from "./about.js";
+import { createContactItem } from "./contact.js";
 
 export function loadPage(pageName) {
   const pageContent = document.querySelector("#content");
@@ -9,6 +10,7 @@ export function loadPage(pageName) {
     home: createHomeItem(),
     menu: createMenuItem(),
     about: createAboutItem(),
+    contact: createContactItem()
   };
   pageContent.append(pageHandler[pageName]);
   return;

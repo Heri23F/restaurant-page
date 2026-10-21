@@ -11,6 +11,7 @@ navButtons.addEventListener("click", (event) => {
     "home-button": "home",
     "menu-button": "menu",
     "about-button": "about",
+    "contact-button": "contact"
   };
 
   loadPage(buttonMap[target.id]);

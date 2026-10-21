@@ -19,3 +19,13 @@ export function createList(listType, listContent = [], listClass) {
 
   return list;
 }
+
+export function createIcon(src, iconClass) {
+  const icon = document.createElement("img");
+  icon.setAttribute("src", src);
+  if (iconClass) {
+    icon.classList = iconClass;
+  }
+
+  return icon;
+}
