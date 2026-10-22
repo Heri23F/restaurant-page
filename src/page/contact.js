@@ -1,14 +1,14 @@
-import { createElement, createIcon } from "../util.js";
+import { createElement } from "../util.js";
 import { icons } from "../icons/icons.js";
 
 export function createContactItem() {
   const fragment = new DocumentFragment();
-  const iconMap = {
-    instagram: icons.instagram,
-    email: icons.email,
-    facebook: icons.facebook,
-    whatsapp: icons.whatsapp,
-  };
+  const iconMap = [
+    { path: icons.instagram, link: "www.placeholder" },
+    { path: icons.email, link: "www.placeholder" },
+    { path: icons.facebook, link: "www.placeholder" },
+    { path: icons.whatsapp, link: "www.placeholder" },
+  ];
 
   const contactHeading = createElement(
     "h1",
@@ -17,9 +17,15 @@ export function createContactItem() {
   );
   const iconsDiv = createElement("div", "", "icons-div");
 
-  for (const icon in iconMap) {
-    iconsDiv.append(createIcon(iconMap[icon], "contact-icon"));
-  }
+  iconMap.forEach((icon) => {
+    const iconLink = createElement("a", "", "icon-link");
+    iconLink.setAttribute("href", icon.link);
+    const iconImage = createElement("img", "", "icon-image");
+    iconImage.setAttribute("src", icon.path);
+
+    iconLink.append(iconImage);
+    iconsDiv.append(iconLink);
+  });
 
   fragment.append(contactHeading, iconsDiv);
 
