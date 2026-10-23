@@ -1,0 +1,23 @@
+body {
+  background: #333333 url(image/backround.webp) no-repeat center / cover fixed;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+  background-color: #333333;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.nav-buttons button {
+  background-color: rgb(0 0 0 / 0);
+  color: #fff;
+  border: none;
+}
+
+.nav-buttons button:hover {
+    border-radius: 4px;
+  background-color: #fff;
+  color: #333333;
+}
