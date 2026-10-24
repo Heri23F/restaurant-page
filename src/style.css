@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
+  font-family: "Inter Variable", sans-serif;
 }
 
 .nav-buttons {
@@ -37,4 +38,13 @@ body {
 
 .hero-image {
   flex: 0 1 400px;
+}
+
+.hero-text h1 {
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }

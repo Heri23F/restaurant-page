@@ -1,4 +1,6 @@
 import "./style.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/roboto";
 import { loadPage } from "./page/page.js";
 
 loadPage("home");
