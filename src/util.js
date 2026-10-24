@@ -19,3 +19,16 @@ export function createList(listType, listContent = [], listClass) {
 
   return list;
 }
+
+export function createImage(src, imgClass, alt) {
+  const image = document.createElement("img");
+  image.setAttribute("src", src);
+  if (imgClass) {
+    image.classList = imgClass;
+  }
+  if (alt) {
+    image.setAttribute("alt", alt);
+  }
+
+  return image;
+}

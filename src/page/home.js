@@ -1,42 +1,27 @@
-import { createElement, createList } from "../util.js";
+import { createElement, createImage } from "../util.js";
+import heroImageFile from "../image/food.png";
 
 export function createHomeItem() {
-  
-
   const fragment = new DocumentFragment();
-  const leftDiv = createElement("div", "", "left-div");
-  leftDiv.append(
+  const heroText = createElement("div", "", "hero-text");
+  heroText.append(
     createElement(
       "h1",
       "My Awesome Restaurant, The Best restaurant in The World",
     ),
   );
 
-  leftDiv.append(
+  heroText.append(
     createElement(
       "p",
       "Our Restaurant is the best restaurant you can get. We serve many type of food",
       "restaurant-description",
     ),
   );
-  leftDiv.append(createElement("button", "Order now", "order-button"));
+  heroText.append(createElement("button", "Order now", "order-button"));
 
-  const rightDiv = createElement("div", "", "right-div");
-  rightDiv.append(createElement("p", "Open Hour", "open-hour-text"));
-  rightDiv.append(
-    createList(
-      "ul",
-      [
-        "Monday: 08.00 - 16.00",
-        "Tuesday: 08.00 - 16.00",
-        "Wednesday: 09.00 - 17.00",
-        "Thursday: 10.00 - 18.00",
-        "Friday: 12.00 - 20.00",
-      ],
-      "open-hour-list",
-    ),
-  );
+  const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
 
-  fragment.append(leftDiv, rightDiv);
-  return fragment
+  fragment.append(heroText, heroImage);
+  return fragment;
 }

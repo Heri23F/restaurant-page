@@ -10,8 +10,15 @@ export function loadPage(pageName) {
     home: createHomeItem(),
     menu: createMenuItem(),
     about: createAboutItem(),
-    contact: createContactItem()
+    contact: createContactItem(),
+  };
+  const contentClass = {
+    home: "home-page",
+    menu: "menu-page",
+    about: "about-page",
+    contact: "contact-page",
   };
   pageContent.append(pageHandler[pageName]);
+  pageContent.classList = contentClass[pageName];
   return;
 }
