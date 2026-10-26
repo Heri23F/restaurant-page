@@ -1,7 +1,7 @@
 import { createElement } from "../util.js";
 import { icons } from "../icons/icons.js";
 
-export function createContactItem() {
+export function createContactContent() {
   const fragment = new DocumentFragment();
   const iconMap = [
     { path: icons.instagram, link: "www.placeholder" },

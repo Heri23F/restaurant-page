@@ -1,6 +1,6 @@
 import { createElement } from "../util.js";
 
-export function createAboutItem() {
+export function createAboutContent() {
   const fragment = new DocumentFragment();
 
   const aboutHeading = createElement("h1", "About", "about-heding");
@@ -11,5 +11,5 @@ export function createAboutItem() {
   );
 
   fragment.append(aboutHeading, aboutText);
-  return fragment
+  return fragment;
 }

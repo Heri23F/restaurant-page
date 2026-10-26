@@ -27,8 +27,7 @@ const menuItemArr = [
   },
 ];
 
-
-export function createMenuItem() {
+export function createMenuContent() {
   const fragment = new DocumentFragment();
   const menuItem = new DocumentFragment();
   const menuHeading = createElement(

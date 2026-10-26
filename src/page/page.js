@@ -1,16 +1,16 @@
-import { createMenuItem } from "./menu.js";
-import { createHomeItem } from "./home.js";
-import { createAboutItem } from "./about.js";
-import { createContactItem } from "./contact.js";
+import { createMenuContent } from "./menu.js";
+import { createHomeContent } from "./home.js";
+import { createAboutContent } from "./about.js";
+import { createContactContent } from "./contact.js";
 
 export function loadPage(pageName) {
   const pageContent = document.querySelector("#content");
   pageContent.textContent = "";
   const pageHandler = {
-    home: createHomeItem(),
-    menu: createMenuItem(),
-    about: createAboutItem(),
-    contact: createContactItem(),
+    home: createHomeContent(),
+    menu: createMenuContent(),
+    about: createAboutContent(),
+    contact: createContactContent(),
   };
   const contentClass = {
     home: "home-page",

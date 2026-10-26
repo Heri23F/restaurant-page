@@ -1,7 +1,7 @@
 import { createElement, createImage } from "../util.js";
 import heroImageFile from "../image/food.png";
 
-export function createHomeItem() {
+export function createHomeContent() {
   const fragment = new DocumentFragment();
   const heroText = createElement("div", "", "hero-text");
   heroText.append(
@@ -18,10 +18,9 @@ export function createHomeItem() {
       "restaurant-description",
     ),
   );
+
   heroText.append(createElement("button", "Order now", "order-button"));
-
   const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
-
   fragment.append(heroText, heroImage);
   return fragment;
 }
