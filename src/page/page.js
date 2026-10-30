@@ -1,4 +1,4 @@
-import { createMenuContent } from "./menu.js";
+import menu from "./menu.js";
 import home from "./home.js";
 import { createAboutContent } from "./about.js";
 import { createContactContent } from "./contact.js";
@@ -8,7 +8,7 @@ export function loadPage(pageName) {
   pageContent.textContent = "";
   const pageHandler = {
     home: home(),
-    menu: createMenuContent(),
+    menu: menu(),
     about: createAboutContent(),
     contact: createContactContent(),
   };

@@ -10,17 +10,21 @@
 //   return element;
 // }
 
-export function createElement(tags, {elClass, id, textContent, attributes} ={}, ...childs) {
+export function createElement(
+  tags,
+  { elClass, id, textContent, attributes } = {},
+  ...childs
+) {
   const element = document.createElement(tags);
   const optionMap = {
-    class: elClass,
+    className: elClass,
     id: id,
     textContent: textContent,
   };
 
   Object.entries(optionMap).forEach(([keys, value]) => {
     if (value !== undefined) element[keys] = value;
-  })
+  });
 
   if (attributes) {
     Object.entries(attributes).forEach(([keys, value]) => {
@@ -28,7 +32,9 @@ export function createElement(tags, {elClass, id, textContent, attributes} ={}, 
     });
   }
 
-  childs.forEach(child => element.append(child));
+  if (childs.length > 0) {
+    element.append(...childs);
+  }
 
   return element;
 }

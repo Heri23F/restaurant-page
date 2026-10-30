@@ -25,14 +25,26 @@ import heroImageFile from "../image/food.png";
 //   return fragment;
 // }
 
-export default function() {
-  const fragment = new DocumentFragment()
+export default function () {
+  const fragment = new DocumentFragment();
 
-  const heading = createElement("h1", {elClass: "heading", textContent: "My Awesome Restaurant, The Best restaurant in The World",})
-  const description = createElement("p", {elClass: "restaurant-description", textContent: "Our Restaurant is the best restaurant you can get. We serve many type of food",})
-  const heroText = createElement("div", {elClass:"hero-text"}, heading, description)
+  const heading = createElement("h1", {
+    elClass: "heading",
+    textContent: "My Awesome Restaurant, The Best restaurant in The World",
+  });
+  const description = createElement("p", {
+    elClass: "restaurant-description",
+    textContent:
+      "Our Restaurant is the best restaurant you can get. We serve many type of food",
+  });
+  const heroText = createElement(
+    "div",
+    { elClass: "hero-text" },
+    heading,
+    description,
+  );
   const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
 
-  fragment.append(heroText, heroImage)
-  return fragment
+  fragment.append(heroText, heroImage);
+  return fragment;
 }

@@ -1,6 +1,6 @@
 import { createElement } from "../util.js";
 
-const menuItemArr = [
+const menuItem = [
   {
     title: "Nasi goreng",
     description:
@@ -27,28 +27,67 @@ const menuItemArr = [
   },
 ];
 
-export function createMenuContent() {
-  const fragment = new DocumentFragment();
-  const menuItem = new DocumentFragment();
-  const menuHeading = createElement(
-    "h1",
-    "Awesome Restaurant Menu",
-    "menu-heading",
-  );
+// export default function() {
+//   const fragment = new DocumentFragment();
+//   const menuItem = new DocumentFragment();
+//   const menuHeading = createElement(
+//     "h1",
+//     "Awesome Restaurant Menu",
+//     "menu-heading",
+//   );
 
-  menuItemArr.forEach((item) => {
-    const itemDiv = createElement("div", "", "item-div");
-    const itemImage = createElement("img", "", "item-image");
-    itemImage.setAttribute("src", item.image);
-    itemDiv.append(
+//   menuItemArr.forEach((item) => {
+//     const itemDiv = createElement("div", "", "item-div");
+//     const itemImage = createElement("img", "", "item-image");
+//     itemImage.setAttribute("src", item.image);
+//     itemDiv.append(
+//       itemImage,
+//       createElement("h2", item.title, "item-title"),
+//       createElement("p", item.description, "item-description"),
+//     );
+
+//     menuItem.append(itemDiv);
+//   });
+
+//   fragment.append(menuHeading, menuItem);
+//   return fragment;
+// }
+
+export default function () {
+  const fragment = new DocumentFragment();
+  const menuHeading = createElement("h1", {
+    elClass: "menu heading",
+    textContent: "Menu",
+  });
+  fragment.append(menuHeading);
+
+  menuItem.forEach((item) => {
+    const itemImage = createElement("img", {
+      elClass: "item-image",
+      attributes: { src: item.image },
+    });
+
+    const itemTitle = createElement("h2", {
+      elClass: "item-title",
+      textContent: item.title,
+    });
+
+    const itemDescription = createElement("p", {
+      elClass: "item-description",
+      textContent: item.description,
+    });
+
+    const itemDiv = createElement(
+      "div",
+      { elClass: "item-div" },
+      itemTitle,
       itemImage,
-      createElement("h2", item.title, "item-title"),
-      createElement("p", item.description, "item-description"),
+      itemDescription,
     );
 
-    menuItem.append(itemDiv);
+    fragment.append(itemDiv)
+    console.log(item.description)
   });
 
-  fragment.append(menuHeading, menuItem);
-  return fragment;
+  return fragment
 }
