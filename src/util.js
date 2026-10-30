@@ -1,11 +1,34 @@
-export function createElement(el, elContent, elClass) {
-  const element = document.createElement(el);
-  if (elContent) {
-    element.textContent = elContent;
+// export function createElement(el, elContent, elClass) {
+//   const element = document.createElement(el);
+//   if (elContent) {
+//     element.textContent = elContent;
+//   }
+//   if (elClass) {
+//     element.classList = elClass;
+//   }
+
+//   return element;
+// }
+
+export function createElement(tags, {elClass, id, textContent, attributes} ={}, ...childs) {
+  const element = document.createElement(tags);
+  const optionMap = {
+    class: elClass,
+    id: id,
+    textContent: textContent,
+  };
+
+  Object.entries(optionMap).forEach(([keys, value]) => {
+    if (value !== undefined) element[keys] = value;
+  })
+
+  if (attributes) {
+    Object.entries(attributes).forEach(([keys, value]) => {
+      element.setAttribute(keys, value);
+    });
   }
-  if (elClass) {
-    element.classList = elClass;
-  }
+
+  childs.forEach(child => element.append(child));
 
   return element;
 }
