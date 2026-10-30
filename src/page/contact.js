@@ -1,33 +1,42 @@
 import { createElement } from "../util.js";
 import { icons } from "../icons/icons.js";
 
-export function createContactContent() {
+const iconsMap = [
+  { path: icons.instagram, link: "www.placeholder" },
+  { path: icons.email, link: "www.placeholder" },
+  { path: icons.facebook, link: "www.placeholder" },
+  { path: icons.whatsapp, link: "www.placeholder" },
+];
+
+export default function () {
   const fragment = new DocumentFragment();
-  const iconMap = [
-    { path: icons.instagram, link: "www.placeholder" },
-    { path: icons.email, link: "www.placeholder" },
-    { path: icons.facebook, link: "www.placeholder" },
-    { path: icons.whatsapp, link: "www.placeholder" },
-  ];
 
-  const contactHeading = createElement(
-    "h1",
-    "Contact us at",
-    "contact-heading",
-  );
-  const iconsDiv = createElement("div", "", "icons-div");
+  // create Heading and icons container
+  const heading = createElement("h1", {
+    elClass: "contact heading",
+    textContent: "Contact Us",
+  });
+  const iconsDiv = createElement("div", { elClass: "icons-div" });
 
-  iconMap.forEach((icon) => {
-    const iconLink = createElement("a", "", "icon-link");
-    iconLink.setAttribute("href", icon.link);
-    const iconImage = createElement("img", "", "icon-image");
-    iconImage.setAttribute("src", icon.path);
+  // create social media icons
+  iconsMap.forEach((icon) => {
+    const socialMediaIcon = createElement("img", {
+      elClass: "icon social-media",
+      src: icon.path,
+    });
 
-    iconLink.append(iconImage);
-    iconsDiv.append(iconLink);
+    const link = createElement(
+      "a",
+      {
+        elClass: "social-media-link",
+        href: icon.link,
+      },
+      socialMediaIcon,
+    );
+
+    iconsDiv.append(link);
   });
 
-  fragment.append(contactHeading, iconsDiv);
-
+  fragment.append(heading, iconsDiv);
   return fragment;
 }

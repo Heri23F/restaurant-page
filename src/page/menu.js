@@ -64,7 +64,7 @@ export default function () {
   menuItem.forEach((item) => {
     const itemImage = createElement("img", {
       elClass: "item-image",
-      attributes: { src: item.image },
+      src: item.image,
     });
 
     const itemTitle = createElement("h2", {
@@ -85,9 +85,8 @@ export default function () {
       itemDescription,
     );
 
-    fragment.append(itemDiv)
-    console.log(item.description)
+    fragment.append(itemDiv);
   });
 
-  return fragment
+  return fragment;
 }

@@ -1,7 +1,7 @@
 import menu from "./menu.js";
 import home from "./home.js";
 import { createAboutContent } from "./about.js";
-import { createContactContent } from "./contact.js";
+import contact from "./contact.js";
 
 export function loadPage(pageName) {
   const pageContent = document.querySelector("#content");
@@ -10,7 +10,7 @@ export function loadPage(pageName) {
     home: home(),
     menu: menu(),
     about: createAboutContent(),
-    contact: createContactContent(),
+    contact: contact(),
   };
   const contentClass = {
     home: "home-page",
