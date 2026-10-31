@@ -1,30 +1,6 @@
 import { createElement, createImage } from "../util.js";
 import heroImageFile from "../image/food.png";
 
-// export function createHomeContent() {
-//   const fragment = new DocumentFragment();
-//   const heroText = createElement("div", "", "hero-text");
-//   heroText.append(
-//     createElement(
-//       "h1",
-//       "My Awesome Restaurant, The Best restaurant in The World",
-//     ),
-//   );
-
-//   heroText.append(
-//     createElement(
-//       "p",
-//       "Our Restaurant is the best restaurant you can get. We serve many type of food",
-//       "restaurant-description",
-//     ),
-//   );
-
-//   heroText.append(createElement("button", "Order now", "order-button"));
-//   const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
-//   fragment.append(heroText, heroImage);
-//   return fragment;
-// }
-
 export default function () {
   const fragment = new DocumentFragment();
 
@@ -37,12 +13,20 @@ export default function () {
     textContent:
       "Our Restaurant is the best restaurant you can get. We serve many type of food",
   });
+
+  const orderButton = createElement("button", {
+    elClass: "order-button",
+    textContent: "Order Now",
+  });
+
   const heroText = createElement(
     "div",
     { elClass: "hero-text" },
     heading,
     description,
+    orderButton,
   );
+  
   const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
 
   fragment.append(heroText, heroImage);

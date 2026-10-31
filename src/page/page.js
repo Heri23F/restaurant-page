@@ -1,16 +1,16 @@
-import menu from "./menu.js";
-import home from "./home.js";
-import { createAboutContent } from "./about.js";
-import contact from "./contact.js";
+import menuPage from "./menu.js";
+import homePage from "./home.js";
+import aboutPage from "./about.js";
+import contactPage from "./contact.js";
 
 export function loadPage(pageName) {
   const pageContent = document.querySelector("#content");
   pageContent.textContent = "";
   const pageHandler = {
-    home: home(),
-    menu: menu(),
-    about: createAboutContent(),
-    contact: contact(),
+    home: homePage(),
+    menu: menuPage(),
+    about: aboutPage(),
+    contact: contactPage(),
   };
   const contentClass = {
     home: "home-page",
