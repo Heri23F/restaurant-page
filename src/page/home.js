@@ -1,4 +1,4 @@
-import { createElement, createImage } from "../util.js";
+import { createElement } from "../util.js";
 import heroImageFile from "../image/food.png";
 
 export default function () {
@@ -26,8 +26,13 @@ export default function () {
     description,
     orderButton,
   );
-  
-  const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
+
+  // const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
+  const heroImage = createElement("img", {
+    elClass: "hero-image",
+    src: heroImageFile,
+    alt: "a hero image",
+  });
 
   fragment.append(heroText, heroImage);
   return fragment;

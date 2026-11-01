@@ -27,32 +27,6 @@ const menuItem = [
   },
 ];
 
-// export default function() {
-//   const fragment = new DocumentFragment();
-//   const menuItem = new DocumentFragment();
-//   const menuHeading = createElement(
-//     "h1",
-//     "Awesome Restaurant Menu",
-//     "menu-heading",
-//   );
-
-//   menuItemArr.forEach((item) => {
-//     const itemDiv = createElement("div", "", "item-div");
-//     const itemImage = createElement("img", "", "item-image");
-//     itemImage.setAttribute("src", item.image);
-//     itemDiv.append(
-//       itemImage,
-//       createElement("h2", item.title, "item-title"),
-//       createElement("p", item.description, "item-description"),
-//     );
-
-//     menuItem.append(itemDiv);
-//   });
-
-//   fragment.append(menuHeading, menuItem);
-//   return fragment;
-// }
-
 export default function () {
   const fragment = new DocumentFragment();
   const menuHeading = createElement("h1", {
