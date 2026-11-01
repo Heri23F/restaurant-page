@@ -25,7 +25,7 @@ export default function () {
 
   // creat contact text content
   const textContainer = createElement("div", { elClass: "text-container" });
-  Object.entries(([keys, value]) => {
+  Object.entries(paragraph).forEach(([keys, value]) => {
     const para = createElement("p", {
       elClass: `para ${keys}`,
       textContent: value,
