@@ -1,17 +1,22 @@
 import { createElement } from "../util.js";
 import heroImageFile from "../image/food.png";
 
-export default function () {
-  const fragment = new DocumentFragment();
+const heroContent = {
+  heading: {
+    tags: "h1",
+    textContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum."
+  }
+}
 
+function createHero() {
   const heading = createElement("h1", {
     elClass: "heading",
-    textContent: "My Awesome Restaurant, The Best restaurant in The World",
+    textContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum.",
   });
   const description = createElement("p", {
     elClass: "restaurant-description",
     textContent:
-      "Our Restaurant is the best restaurant you can get. We serve many type of food",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia luctus eros.",
   });
 
   const orderButton = createElement("button", {
@@ -27,13 +32,20 @@ export default function () {
     orderButton,
   );
 
-  // const heroImage = createImage(heroImageFile, "hero-image", "a hero image");
   const heroImage = createElement("img", {
     elClass: "hero-image",
     src: heroImageFile,
     alt: "a hero image",
   });
 
-  fragment.append(heroText, heroImage);
+  const heroDiv = createElement("div", {elClass: "hero-div"}, heroText, heroImage)
+  return heroDiv
+}
+
+export default function () {
+  const fragment = new DocumentFragment();
+  const heroDiv = createHero()
+
+  fragment.append(heroDiv);
   return fragment;
 }
