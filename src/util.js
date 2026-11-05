@@ -18,3 +18,5 @@ export function createElement(tags, option = {}, ...childs) {
 
   return element;
 }
+
+

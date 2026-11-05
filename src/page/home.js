@@ -1,6 +1,7 @@
 import { createElement } from "../util.js";
 import heroImageFile from "../image/food.png";
 
+// element content
 const heroContent = {
   heading: {
     elClass: "hero-heading",
@@ -20,6 +21,14 @@ const heroContent = {
     alt: "a hero image",
   }
 }
+
+const openHour = [
+  "Monday: 08.00 - 20.00",
+  "Tuesday: 08.00 - 21.00",
+  "Wednesday: 08.00 - 21.00",
+  "Thursday: 08.00 - 22.00",
+  "Friday: 08.00 - 16.00", 
+]
 
 function createHero(content) {
   const heading = createElement("h1", {
@@ -55,10 +64,21 @@ function createHero(content) {
   return heroDiv
 }
 
-export default function () {
-  const fragment = new DocumentFragment();
-  const heroDiv = createHero(heroContent)
+function createOpenHourList(listContent) {
+  const list = createElement("ul", {elClass: "open-hour-list"})
+  listContent.forEach(item => {
+    const listItem = createElement("li", {textContent: item})
+    list.append(listItem)
+  })
+  
+  return list
+} 
+  
+export default function() {
+  const fragment = new DocumentFragment()
+  const hero = createHero(heroContent)
+  const list = createOpenHourList(openHour)
 
-  fragment.append(heroDiv);
-  return fragment;
+  fragment.append(hero, list)
+  return fragment
 }

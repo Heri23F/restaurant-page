@@ -13,10 +13,10 @@ export function loadPage(pageName) {
     contact: contactPage(),
   };
   const contentClass = {
-    home: "home-page",
-    menu: "menu-page",
-    about: "about-page",
-    contact: "contact-page",
+    home: "container home-page",
+    menu: "container menu-page",
+    about: "container about-page",
+    contact: "container contact-page",
   };
   pageContent.append(pageHandler[pageName]);
   pageContent.classList = contentClass[pageName];
