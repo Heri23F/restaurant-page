@@ -9,7 +9,7 @@ const heroContent = {
   },
   description: {
     elClass: "hero-description",
-    textContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia luctus eros.",
+    textContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia luctus eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
   button: {
     elClass: "order-button",
@@ -79,6 +79,6 @@ export default function() {
   const hero = createHero(heroContent)
   const list = createOpenHourList(openHour)
 
-  fragment.append(hero, list)
+  fragment.append(hero)
   return fragment
 }
