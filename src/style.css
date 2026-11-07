@@ -8,6 +8,7 @@ body {
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 6)),
     url(image/background.webp) repeat fixed center / cover;
   color: white;
+  position: relative;
 }
 
 .container {
@@ -27,9 +28,8 @@ body {
 
 .hero-text {
   text-wrap: pretty;
-  flex: 0 1 600px;
   font-size: 16px;
-  flex: 0 1 500px;
+  flex: 0 1 480px;
 }
 
 .hero-heading {
@@ -62,9 +62,11 @@ body {
 
 header {
   display: flex;
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: black;
   justify-content: space-between;
   padding: 0px 32px;
+  position: sticky;
+  top: 0;
 }
 
 .nav-buttons {
