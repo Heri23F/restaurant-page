@@ -29,6 +29,7 @@ body {
   text-wrap: pretty;
   flex: 0 1 600px;
   font-size: 16px;
+  flex: 0 1 500px;
 }
 
 .hero-heading {
@@ -42,15 +43,21 @@ body {
 }
 
 .hero-image {
-  flex: 0 1 400;
+  flex: 0 1 600px;
 }
 
 .hero-text button {
   border: 2px solid transparent;
   font-size: 1.5em;
-  border-radius: 8px;
-  background-color: gray;
-  color: white;
+  font-family: "Inter Variable", sans-serif;
+  font-weight: 700;
+  border-radius: 6px;
+  background-color: white;
+}
+.hero-text button:hover {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
 }
 
 header {
