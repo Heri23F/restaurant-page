@@ -99,3 +99,27 @@ header {
 .icon {
     width: 48px;
 }
+
+.container.menu-page {
+  padding: 16px;
+  align-items: center;
+}
+
+.item-div {
+  border: 1px solid #444444;
+  border-radius: 16px;
+  padding: 32px;
+  background-color: rgb(0 0 0 / 0.8);
+  max-width: 800px;
+  font-size: 16px;
+  font-family: "Inter Variable", sans-serif;
+}
+
+.item-div h2 {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.item-description {
+  font-size: 1.2em;
+}
