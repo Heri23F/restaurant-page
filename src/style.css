@@ -55,9 +55,9 @@ body {
   background-color: white;
 }
 .hero-text button:hover {
-    border: 2px solid white;
-    background-color: black;
-    color: white;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
 }
 
 header {
@@ -97,7 +97,7 @@ header {
 }
 
 .icon {
-    width: 48px;
+  width: 48px;
 }
 
 .container.menu-page {
@@ -137,12 +137,24 @@ header {
   aspect-ratio: 2 / 1;
 }
 
-.item-price {
-  align-self: flex-end;
-  font-size: 2em;
+.item-price,
+.buy-button {
+  font-size: 1.5em;
   font-weight: 700;
   background-color: white;
   color: black;
   padding: 8px 16px;
   border-radius: 8px;
+}
+
+.buy-button {
+  border: none;
+  background-color: green;
+  color: white;
+}
+
+.purchase-div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }

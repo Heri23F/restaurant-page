@@ -61,13 +61,20 @@ export default function () {
       textContent: item.price,
     });
 
+    const buyButton = createElement("button", {
+      elClass: "buy-button",
+      textContent: "Buy",
+    });
+
+    const purchaseDiv = createElement("div", { elClass: "purchase-div" }, buyButton, itemPrice);
+
     const itemDiv = createElement(
       "div",
       { elClass: "item-div" },
       itemTitle,
       itemImage,
       itemDescription,
-      itemPrice,
+      purchaseDiv,
     );
 
     fragment.append(itemDiv);
