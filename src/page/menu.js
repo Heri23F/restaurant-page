@@ -63,7 +63,7 @@ export default function () {
 
     const buyButton = createElement("button", {
       elClass: "buy-button",
-      textContent: "Buy",
+      textContent: "Order",
     });
 
     const purchaseDiv = createElement("div", { elClass: "purchase-div" }, buyButton, itemPrice);

@@ -128,7 +128,9 @@ header {
 }
 
 .item-description {
+  padding-bottom: 32px;
   font-size: 1.2em;
+  border-bottom: 1px solid #444444;
 }
 
 .item-image {
@@ -149,7 +151,7 @@ header {
 
 .buy-button {
   border: none;
-  background-color: green;
+  background-color: #FF7A00;
   color: white;
 }
 
