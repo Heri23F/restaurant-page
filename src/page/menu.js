@@ -66,13 +66,13 @@ export default function () {
       textContent: "Order",
     });
 
-    const purchaseDiv = createElement("div", { elClass: "purchase-div" }, buyButton, itemPrice);
+    const purchaseDiv = createElement("div", { elClass: "purchase-div" }, itemPrice, buyButton,);
 
     const itemDiv = createElement(
       "div",
       { elClass: "item-div" },
-      itemTitle,
       itemImage,
+       itemTitle,
       itemDescription,
       purchaseDiv,
     );
