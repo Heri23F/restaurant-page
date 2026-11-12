@@ -102,10 +102,14 @@ header {
   width: 48px;
 }
 
-.container.menu-page {
-  padding: 16px;
+.container.menu-page,
+.container.about-page {
   align-items: center;
   font-family: "Inter Variable", sans-serif;
+}
+
+.container.menu-page {
+  padding: 16px;
 }
 
 .menu-heading {
@@ -169,4 +173,16 @@ header {
 .item-price {
   font-size: 2em;
   font-weight: 700;
+}
+
+.container.about-page {
+  margin: auto;
+  max-width: 800px;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 32px;
+}
+
+.container.about-page .para {
+  line-height: 1.5;
 }
