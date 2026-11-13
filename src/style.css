@@ -30,16 +30,19 @@ body {
   text-wrap: pretty;
   font-size: 16px;
   flex: 0 1 480px;
+  gap: 8px
 }
 
 .hero-heading {
   font-size: 2em;
   font-family: "Inter Variable";
+  font-weight: 900;
 }
 .hero-description {
-  font-size: 1em;
+  font-size: 0.9em;
   font-family: "Roboto Variable";
   font-weight: 400;
+  line-height: 1.6;
 }
 
 .hero-image {
@@ -47,19 +50,16 @@ body {
 }
 
 .hero-text button {
-  border: 2px solid transparent;
-  font-size: 1.5em;
+  border: none;
+  font-size: 1em;
   font-family: "Inter Variable", sans-serif;
   font-weight: 700;
-  border-radius: 6px;
-  background-color: white;
+  border-radius: 8px;
+  background-color: #ff7a00;
+  color: white;
   cursor: pointer;
   transition: transform 0.1s ease;
-}
-.hero-text button:hover {
-  border: 2px solid white;
-  background-color: black;
-  color: white;
+  padding: 12px 24px;
 }
 
 .hero-text button:active {

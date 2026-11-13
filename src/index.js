@@ -30,3 +30,4 @@ navButtons.addEventListener("click", (event) => {
 
   loadPage(buttonMap[target.id]);
 });
+
