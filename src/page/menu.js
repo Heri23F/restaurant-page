@@ -1,5 +1,5 @@
 import { createElement } from "../util.js";
-import image from "../image/menu_image/images.js";
+import image from "../image/images.js";
 
 const menuItem = [
   {

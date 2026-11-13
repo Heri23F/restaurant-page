@@ -1,3 +1,4 @@
+import images from "../image/images.js";
 import { createElement } from "../util.js";
 
 const paraContent = [
@@ -20,7 +21,13 @@ export default function () {
     elClass: "about heading",
     textContent: "About Us",
   });
-  fragment.append(heading);
+
+  const image = createElement("img", {
+    elClass: "about-image",
+    src: images.restaurantImage,
+  });
+
+  fragment.append(heading, image);
 
   paraContent.forEach((para) => {
     const paragraph = createElement("p", {
