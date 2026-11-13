@@ -31,3 +31,8 @@ navButtons.addEventListener("click", (event) => {
   loadPage(buttonMap[target.id]);
 });
 
+const orderButton = document.querySelector(".order-button")
+
+orderButton.addEventListener("click", () => {
+  loadPage("menu")
+})
